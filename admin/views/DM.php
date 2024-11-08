@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh mục sản phẩm</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .footer {
             margin-top: 40%; 
         }
         .table {
-            table-layout: fixed; /* Đảm bảo các cột có chiều rộng đều nhau */
+            table-layout: fixed; 
         }
         .table th, .table td {
-            overflow: hidden; /* Ẩn nội dung tràn */
-            text-overflow: ellipsis; /* Hiển thị dấu "..." nếu nội dung quá dài */
-            white-space: nowrap; /* Không cho nội dung xuống dòng */
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
         }
 
     </style>

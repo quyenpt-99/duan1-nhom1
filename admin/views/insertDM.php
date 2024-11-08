@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="theanh">
-        <!-- Header -->
+
         <?php require_once 'khung/header.php'; ?>
 
-        <!-- Container -->
+
         <div class="container my-4">
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white text-center">
@@ -20,14 +20,14 @@
                 </div>
                 <div class="card-body">
                     <form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-                        <!-- Category Name Input -->
+
                         <div class="form-group">
                             <label for="cate_name">Tên danh mục</label>
                             <input type="text" name="cate_name" id="cate_name" class="form-control" placeholder="Nhập tên danh mục">
                             <small id="error-message" class="form-text text-danger"></small>
                         </div>
 
-                        <!-- Submit and Back Buttons -->
+
                         <div class="d-flex justify-content-between">
                             <button name="btn_insertCTGR" class="btn btn-success" type="submit">Thêm danh mục sản phẩm</button>
                             <a href="?act=category" class="btn btn-secondary">Quay lại</a>
@@ -37,17 +37,17 @@
             </div>
         </div>
 
-        <!-- Footer -->
+
         <?php require_once 'khung/footer.php'; ?>
     </div>
 
-    <!-- Bootstrap JS -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Form validation
+
         function validateForm() {
             var cateName = document.getElementById("cate_name").value.trim();
             var errorMessage = document.getElementById("error-message");

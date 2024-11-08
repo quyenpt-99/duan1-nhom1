@@ -15,6 +15,11 @@ match ($act) {
     'deleteDM'      => (new productController())->deleteCTGR($_GET["id"]),
     'updateDM'      => (new productController())->updateCTGR($_GET["id"]),
 
+
+    'listSP'   => (new productController())->listProduct(),
+    'deleteSP' => (new productController())->deleteProduct($_GET['id']),
+    'updateSP' => (new productController())->updateProduct($_GET['id']),
+    'insertproduct' => (new productController())->insertProduct(),
     default         => handleDefault($act),
 };
 

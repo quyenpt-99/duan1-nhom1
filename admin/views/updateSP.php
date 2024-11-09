@@ -18,9 +18,9 @@
             <img src="../assets/img/<?= $oneProduct['image'] ?>" alt="">
             <input type="file" name="img" id="">
             <p>Giá sản phẩm</p><input type="text" name="price" id="" value="<?= $oneProduct['price'] ?>">
-            <p>Chi tiết sản phẩm</p><input type="text" name="detail" id="" value="<?= $oneProduct['description'] ?>">
-            <p>Số lượng</p><input type="text" name="detail" id="" value="<?= $oneProduct['quantity'] ?>">
-            <p>Lượt xem</p><input type="text" name="detail" id="" value="<?= $oneProduct['view'] ?>">
+            <p>Chi tiết sản phẩm</p><input type="text" name="description" id="" value="<?= $oneProduct['description'] ?>">
+            <p>Số lượng</p><input type="text" name="quantity" id="" value="<?= $oneProduct['quantity'] ?>">
+            <p>Lượt xem</p><input type="text" name="view" id="" value="<?= $oneProduct['view'] ?>">
             <p>Danh mục sản phẩm</p>
             <select name="cate" id="">
             <option value="<?= $oneProduct['id_danhmuc'] ?>"><?=$cateName["id_danhmuc"]?></option>

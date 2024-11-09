@@ -109,13 +109,16 @@ class productController{
     function insertProduct(){
         $listCateName = $this->productModel->listCateName();
         require_once 'views/insertSP.php';
+        
         if(isset($_POST['btn_insert'])){
             $name = $_POST['name'];
             $price = $_POST['price'];
-            $description = $_POST['detail'];
+            $description = $_POST['description']; 
             $quantity = $_POST['quantity'];
+            $view = $_POST['view']; 
             $cate_id = $_POST['cate'];
             
+ 
             if(empty($_FILES['img']['name'])){
                 $img = "";
             } else {
@@ -124,13 +127,15 @@ class productController{
                 move_uploaded_file($tmp, '../assets/img/'.$img);
             }
     
+ 
             if($this->productModel->insertProduct($name, $img, $price, $description, $quantity, $view, $cate_id)){
                 header("location:?act=listSP");
             } else {
-                echo "Lỗi";
+                echo "Lỗi khi thêm sản phẩm"; 
             }
         }
     }
+    
     
     
 

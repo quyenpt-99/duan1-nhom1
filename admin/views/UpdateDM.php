@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chỉnh sửa danh mục</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
+
     <?php require_once 'khung/header.php'; ?>
 
-    <!-- Main Content -->
+
     <div class="container">
         <div class="card mt-4 mb-4 shadow-sm">
             <div class="card-header bg-dark text-white text-center">
@@ -21,7 +21,7 @@
                 <form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <input type="hidden" name="id" value="<?= $oneCTGR["id_danhmuc"]?>">
                     
-                    <!-- Form Group for Category Name -->
+
                     <div class="form-group">
                         <label for="cate_name">Tên danh mục</label>
                         <input 
@@ -35,8 +35,7 @@
                         >
                         <small id="error-message" class="form-text text-danger"></small>
                     </div>
-                    
-                    <!-- Submit and Back Buttons -->
+
                     <div class="d-flex justify-content-between">
                         <button name="btn_updateCTGR" class="btn btn-success" type="submit">Sửa sản phẩm</button>
                         <a href="?act=category" class="btn btn-secondary">Quay lại</a>
@@ -46,16 +45,16 @@
         </div>
     </div>
 
-    <!-- Footer -->
+
     <?php require_once 'khung/footer.php'; ?>
 
-    <!-- Bootstrap JS -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Form validation
+
         function validateForm() {
             var cateName = document.getElementById("cate_name").value.trim(); 
             var errorMessage = document.getElementById("error-message");

@@ -57,9 +57,10 @@ function cateName($id){
 
 
 function getAllProduct(){
-    $sql="select * from sanpham  ";
+    $sql="select * from sanpham join danhmuc on sanpham.id_cate=danhmuc.id_danhmuc ";
     return $this->conn->query($sql)->fetchAll();    
 }
+
 
 function findProductById($id){
     $sql="select * from sanpham where id_sanpham=$id";
@@ -71,20 +72,19 @@ function findProductById($id){
     return $stmt->execute();
 }
 function updateProduct($id, $name, $img, $price, $description, $quantity, $view, $cate_id) {
-    if (empty($img)) {
-        $sql = "UPDATE product SET name='$name', price=$price, description='$description', quantity=$quantity, view=$view, id_cate=$cate_id WHERE id_sanpham=$id";
-    } else {
-        $sql = "UPDATE product SET name='$name', image='$img', price=$price, description='$description', quantity=$quantity, view=$view, id_cate=$cate_id WHERE id_sanpham=$id";
-    }
+    $sql = "UPDATE sanpham SET name = ?, image = ?, price = ?, description = ?, quantity = ?, view = ?, id_cate = ? WHERE id_sanpham = ?";
     $stmt = $this->conn->prepare($sql);
-    return $stmt->execute();
+    return $stmt->execute([$name, $img, $price, $description, $quantity, $view, $cate_id, $id]);
 }
 
+
 function insertProduct($name, $img, $price, $description, $quantity, $view, $cate_id) {
-    $sql = "INSERT INTO product (name, image, price, description, quantity, view, id_cate) VALUES ('$name', '$img', $price, '$description', $quantity, $view, $cate_id)";
+    $sql = "INSERT INTO sanpham (name, image, price, description, quantity, view, id_cate) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $this->conn->prepare($sql);
-    return $stmt->execute();
+    return $stmt->execute([$name, $img, $price, $description, $quantity, $view, $cate_id]);
 }
+
 
 
 
